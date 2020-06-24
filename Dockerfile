@@ -41,12 +41,14 @@ RUN \
 	su zerotier-one -c "git clone https://github.com/key-networks/ztncui /opt/ztncui && \ 
 		cd /opt/ztncui/src && \
 			mv -v etc/default.passwd ../passwd.orig && \
-			echo 'HTTPS_PORT=3443' >> .env" && \
+			echo 'HTTPS_PORT=3443' >> .env && \
+			echo 'HTTP_ALL_INTERFACES=yes' >> .env && \
+			echo 'HTTP_PORT=3000' >> .env" && \
 	su zerotier-one -c "cd /opt/ztncui/src && npm install"
 
 
 # Clean
-## TODO
+RUN apt-get clean
 
 
 # Volumes
