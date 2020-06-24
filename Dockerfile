@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 LABEL \
-	maintainer="mdPlusPlus" \
+	maintainer="Seji64" \
 	description="Host your own ZeroTier network controller and manage it via ztncui."
 
 
@@ -48,7 +48,7 @@ RUN \
 
 
 # Clean
-RUN apt-get clean
+## ToDo
 
 
 # Volumes
